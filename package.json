@@ -1,0 +1,20 @@
+{
+  "name": "starter-arc",
+  "version": "0.0.1",
+  "description": "simple starter discord bot Arc",
+  "main": "bot.js",
+  "scripts": {
+    "test": "nodemon bot.js"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "js"
+  ],
+  "author": "htprogras",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security"
+  }
+}
