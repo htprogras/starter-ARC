@@ -5,6 +5,8 @@ const config = require('./settings')
 //client
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
+// clear terminal
+console.log('\033[2J');
 //events
 fs.readdir('./events', (err, files) => {
     //not events found
@@ -13,7 +15,7 @@ fs.readdir('./events', (err, files) => {
         return
     }
     files.forEach(file => {
-        const events = require('./events/' + file)//require files 
+        const events = require('./events/' + file)//require files
         const event  = file.split('.')[0]
 
         client.on(event, events.bind(null, client))
@@ -31,7 +33,6 @@ fs.readdir('./commands', (err, files) => {
     //load file
     commandes.forEach(file => {
         let commande = require('./commands/' + file)
-        console.log(commande.help.name + ' load !')
         client.commands.set(commande.help.name, commande)
     })
 })
